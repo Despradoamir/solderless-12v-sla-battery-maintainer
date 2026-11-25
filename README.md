@@ -1,4 +1,4 @@
-<meta name="google-site-verification" content="HUQCbK4W9PhhLS8IVwpSwIG91K75XXCDHV4JOWGzQ_U" />
+google-site-verification: google27d90ded50ec71e1.html content="HUQCbK4W9PhhLS8IVwpSwIG91K75XXCDHV4JOWGzQ_U" />
 # Solderless 12V SLA / UPS Battery Maintainer (5–12Ah, 13.8V Float)
 
 **A 100% solderless, ultra-minimal, ~$3–5 12V SLA battery maintainer. No PCB. No regulator. No soldering iron. Just a $2 transformer, four diodes, and physics.**
