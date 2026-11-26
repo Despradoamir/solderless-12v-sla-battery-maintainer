@@ -36,6 +36,20 @@ This open-hardware repository presents an ultra-reliable, minimalist, and **100%
 If you need any of the "is not" features, use a smart charger (NE555/LM317) or a desulfator instead. This project deliberately does **one thing extremely well**.
 ---
 
+🎯 Purpose & Design Philosophy | هدف و فلسفه طراحی
+
+• English: Designed for emergency situations, tool-free environments, and economic hardship—specifically to prevent sulfation and premature death of motorcycle and UPS batteries (5Ah–12Ah) whose charging systems are weak or faulty. Note: This is a Float Maintainer (13.8V), not a desulfator or deep-discharge recovery charger.
+• فارسی: این مدار برای شرایط اضطراری، نبود ابزار لحیم‌کاری و شرایط دشوار اقتصادی طراحی شده است تا از سولفاته شدن و مرگ زودرس باتری‌های ۱۲ ولت (۵ تا ۱۲ آمپرساعت) در موتورسیکلت‌ها و سیستم‌های UPS که سیستم شارژ ضعیف یا معیوب دارند، جلوگیری کند. توجه: این مدار یک نگهدارنده شناور (Float) است و برای احیای باتری‌های کاملاً مرده (دشارژ عمیق) یا دیسولفاته کردن کاربرد ندارد.
+
+⚙️ Engineering Logic (For Specialists) | منطق مهندسی (ویژه متخصصین)
+
+Instead of active regulation (ICs/PCBs), this topology relies on intrinsic passive physics:
+1. Transformer Winding Impedance (\(Z_{tr}\)): The internal resistance and leakage inductance of a small step-down transformer (10–15VA, ~11.5V–12V AC RMS) act as a natural, self-limiting current source, preventing thermal runaway during initial charging.
+2. Diode Forward Voltage Drop (\(V_{f}\)): Using 4x 1N5408 diodes in a full-bridge configuration drops approximately 1.4V - 1.6V from the peak AC voltage (\(V_{peak} \approx 15.5\text{V}\)), naturally clamping the output near the safe 13.8V float threshold.
+3. Pulsating DC (No Bulk Capacitor): Omitting the smoothing capacitor avoids high peak charging currents, reduces component count, and delivers gentle pulsating DC suitable for trickle maintenance.
+• خلاصه فنی (فارسی): در این طراحی، امپدانس داخلی سیم‌پیچ ترانسفورماتور به عنوان محدودکننده خودکار جریان عمل می‌کند و افت ولتاژ مستقیم پل دیود (1N5408) قله ولتاژ را به محدوده امن شناور (۱۳.۸ ولت) کاهش می‌دهد. حذف خازن صافی نیز از جریان‌های هجومی اولیه جلوگیری کرده و شارژ پالسی ملایم ایجاد می‌کند.
+
+
 ## 🔌 Circuit Schematic & Architecture
 
 ![Circuit Schematic](schematic.svg)
@@ -54,6 +68,8 @@ flowchart TD
     I --> J
 ```
 
+
+<img width="1344" height="756" alt="بارگیری (1)" src="https://github.com/user-attachments/assets/871c629b-a931-45bc-962b-2375c0f13986" />
 
 ```
 
